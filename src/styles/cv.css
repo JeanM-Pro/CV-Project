@@ -1,0 +1,59 @@
+body{
+    /* background-color: aqua; */
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor{
+    max-width: 600px;
+    width: 45vw;
+    /* background-color: blue; */
+    height: 645px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 4px 4px 6px;
+    overflow: hidden;
+}
+
+.header{
+    width: 100%;
+    background-color: rgb(231, 217, 137);
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h5{
+    color: rgb(95, 91, 91);
+}
+
+.cuerpo{
+    width: 100%;
+    height: 70%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactos{
+    width: 40%;
+    height: 100%;
+    /* background-color: coral; */
+    border-right: 3px solid rgb(198, 202, 201);
+    padding-left: 10px;
+}
+
+.trabajos{
+    width: 55%;
+    height: 100%;
+    /* background-color: cornflowerblue; */
+}
+
+.contenedor-padre{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
