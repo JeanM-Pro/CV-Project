@@ -13,7 +13,7 @@ const idRandom = () => (Math.random() * 100).toString();
 export const CvPRoject = () => {
 
     const [trabajos, setTrabajos] = useState([]);
-    const [estudios, setStudios] = useState([]);
+    const [estudios, setEstudios] = useState([]);
     const [cursos, setCursos] = useState([]);
     
     const [principal, setPrincipal] = useState({propiedades});
@@ -65,16 +65,22 @@ export const CvPRoject = () => {
                 />
 
                 <Estudios
-                instituto={principal.instituto}
-                carrera={principal.carrera}
-                desde={principal.desde}
-                hasta={principal.hasta}
-                inputChange={handleInputChange}
+                estudios = {estudios}
+                setEstudios = {setEstudios}
+                idRandom = {idRandom}
                 />
 
-                <Cursos cursos={cursos} setCursos={setCursos} idRandom={idRandom}/>
+                <Cursos 
+                cursos={cursos} 
+                setCursos={setCursos} 
+                idRandom={idRandom}
+                />
 
-                <Trabajo trabajos={trabajos}/>
+                <Trabajo 
+                trabajos={trabajos}
+                setTrabajos={setTrabajos}
+                idRandom={idRandom}
+                />
 
             </div>
 

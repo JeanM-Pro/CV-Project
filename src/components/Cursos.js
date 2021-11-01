@@ -2,27 +2,26 @@ import React, {useState} from 'react'
 
 
 export const Cursos = ({cursos, setCursos, idRandom}) => {
-    const defaultValue = {curso:''}
+    const defaultValue = {curso:'', academia:'', cursoDesde:'', cursoHasta:''}
     const [inputs, setInputs] = useState(defaultValue);
 
-    const handleInputChange = (e ) => {
+    const handleInputChange = (e) => {
        setInputs({...inputs, [e.target.name]: e.target.value})
     }
 
-       const crearCurso = () => {
+    const crearCurso = () => {
         setCursos([...cursos, { ...inputs, id: idRandom() }]);
-      };
+    };
 
 
     return (
         <div className='div-cursos'>
             <h4>Cursos</h4>
-            <form
+            <form 
                 onSubmit={(e) => {
                 e.preventDefault()
                 crearCurso()
                 setInputs(defaultValue)
-
             }}>
                 <div className='divsito'>
                     <div className='contactos2'>               
@@ -36,7 +35,6 @@ export const Cursos = ({cursos, setCursos, idRandom}) => {
                 </div>
                 <div className='div-buton'>
                     <button type="submit">Añadir</button>
-                    <button type="reset">Resetear</button>
                 </div>
              </form>
         </div>
