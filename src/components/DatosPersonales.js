@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import cv from '../styles/cv.css'
+import React from 'react';
 
 
 export const DatosPersonales = ({nombre, handleInputChange, titulo}) => {
@@ -7,20 +6,18 @@ export const DatosPersonales = ({nombre, handleInputChange, titulo}) => {
 
 
     return (
-        <>
-            <div className='contenedor'>
-                <form>
-                    <label>Nombre</label>
-                    <input type='text' value={nombre} name="nombre" onChange={handleInputChange} />
-                    <br/>
-                    <label>Título</label>
-                    <input type='text' value={titulo} name = 'titulo'  onChange={handleInputChange} />
+        
+        <div className='div-datospersonales'>
+            <form className='divsito'>
+                <div>
+                    <span>Nombre <input type='text' value={nombre} name="nombre" onChange={handleInputChange} /></span>
+                </div>
+                <div>
+                    <span>Título <input type='text' value={titulo} name ='titulo' onChange={handleInputChange} /></span>
+                </div>                
+            </form>
+         </div>
 
-
-                </form>
-
-            </div>
-
-        </>
+        
     )
 }

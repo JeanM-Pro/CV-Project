@@ -7,23 +7,36 @@ body{
 .contenedor{
     max-width: 600px;
     width: 45vw;
-    /* background-color: blue; */
-    height: 645px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    max-height: 640px;
+    /* height: 98%; */
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
     box-shadow: 4px 4px 6px;
     overflow: hidden;
+}
+
+.contenedor2{
+    max-width: 600px;
+    width: 45vw;
+    max-height: 640px;
+    /* height: 98%; */
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
+    box-shadow: 4px 4px 6px;
+    overflow: hidden;
+    padding-top: 15px;
 }
 
 .header{
     width: 100%;
     background-color: rgb(231, 217, 137);
-    height: 20%;
+    height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 h5{
@@ -36,14 +49,13 @@ h5{
     /* background-color: brown; */
     display: flex;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .contactos{
     width: 40%;
     height: 100%;
-    /* background-color: coral; */
-    border-right: 3px solid rgb(198, 202, 201);
-    padding-left: 10px;
+    border-right: solid 3px rgb(172, 167, 167);
 }
 
 .trabajos{
@@ -55,5 +67,98 @@ h5{
 .contenedor-padre{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-content: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
+
+.divsito{
+    display:flex;
+    justify-content: space-around;
+}
+
+.contactos2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.email{
+    margin-left: 16px;
+}
+
+.linkedin{
+    margin-left: 2px;
+}
+
+.twitter{
+    margin-left: 23px;
+}
+
+.facebook{
+    margin-left: 3px;
+}
+
+.carrera{
+    margin-left: 7px;
+}
+
+.hasta{
+    margin-left: 5px;
+}
+
+.boton-estudio{
+    width: 60px;
+    height: 25px;
+}
+
+.div-buton{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.curso{
+    margin-left: 17px;
+}
+
+.hasta{
+    margin-left: 4px;
+}
+
+.cargo{
+    margin-left: 18px;
+}
+
+.trabajoHasta{
+    margin-left: 5px;
+}
+
+.div-contactos{
+    border-top: grey solid 2px;
+    padding-bottom: 11px;
+}
+
+.div-cursos{
+    border-top: grey solid 2px;
+    padding-bottom: 11px;
+}
+
+.div-datospersonales{
+padding: 11px 0;
+background-color: rgb(236, 231, 231);
+}
+
+.div-trabajo{
+    border-top: grey solid 2px;
+    padding-bottom: 11px;
+    background-color: rgb(236, 231, 231);
+}
+
+.div-estudios{
+    border-top: grey solid 2px;
+    padding-bottom: 11px;
+    background-color: rgb(236, 231, 231);
+}
+
+

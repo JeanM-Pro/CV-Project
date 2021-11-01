@@ -1,0 +1,23 @@
+export const propiedades = {
+    nombre:'', 
+    titulo:'', 
+    telefono:'', 
+    email:'', 
+    linkedin:'', 
+    instagram:'', 
+    twitter:'', 
+    facebook:'', 
+    instituto:'', 
+    carrera:'', 
+    desde:'', 
+    hasta:'',
+    data:'',
+    curso:'',
+    academia: '',
+    cursoDesde: '',
+    cursoHasta: '',
+    empresa: '',
+    cargo: '',
+    trabajoDesde:'',
+    trabajoHasta:''
+}
