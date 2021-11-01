@@ -14,6 +14,7 @@ export const Trabajo = ({trabajos, setTrabajos, idRandom}) => {
     };
 
 
+
     return (
         <div className='div-trabajo'>
             <h4>Experiencia Laboral</h4>

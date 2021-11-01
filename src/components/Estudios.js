@@ -12,6 +12,7 @@ export const Estudios = ({estudios, setEstudios, idRandom}) => {
         setEstudios([...estudios, { ...inputs, id: idRandom() }]);
     };
 
+
     return (
 
         <div className='div-estudios'>

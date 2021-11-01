@@ -3,7 +3,7 @@ import '../styles/cv.css'
 import { format} from 'date-fns';
 
 
-export const RenderFinal = ({nombre, titulo, telefono, email, linkedin, instagram, twitter, facebook, cursos, estudios, trabajos}) => {
+export const RenderFinal = ({nombre, titulo, telefono, email, linkedin, instagram, twitter, facebook, cursos, estudios, trabajos, borrarEstudio, borrarCurso, borrarTrabajo}) => {
 
 
 
@@ -34,8 +34,9 @@ export const RenderFinal = ({nombre, titulo, telefono, email, linkedin, instagra
                     <br/>
                     <br/>
                     <h4><b>Estudios</b></h4>
+
                     <ul>
-                        {estudios.map(estudio => <li key={estudio.id}><b>{estudio.instituto ? estudio.instituto : 'ingrese instituto'}.</b> - {estudio.carrera ? estudio.carrera : 'ingrese carrera'}. {estudio.desde ? format(new Date(estudio.desde), 'LLLL-yyyy') : 'ingrese fecha de inicio'} - {estudio.hasta ? format(new Date(estudio.hasta), 'LLLL-yyyy') : 'ingrese fecha de culminación'}</li>)}
+                        {estudios.map(estudio => <li key={estudio.id}><b>{estudio.instituto}.</b> - {estudio.carrera}. {format(new Date(estudio.desde), 'LLL-yyyy')} -- {format(new Date(estudio.hasta), 'LLL-yyyy')}. <button className='boton-borrar' onClick={()=>{borrarEstudio(estudio.id)}}>x</button></li>)}
                     </ul>
                 </div>
 
@@ -43,12 +44,12 @@ export const RenderFinal = ({nombre, titulo, telefono, email, linkedin, instagra
                     <h4><b>Cursos Realizados</b></h4>
 
                     <ul>
-                        {cursos.map(curso => <li key={curso.id}><b>{curso.academia ? curso.academia : 'ingrese instituto'}.</b> - {curso.curso ? curso.curso : 'ingrese curso'}. {curso.cursoDesde ? format(new Date(curso.cursoDesde), 'LLLL-yyyy') : 'ingrese fecha de inicio'} - {curso.cursoHasta ? format(new Date(curso.cursoHasta), 'LLLL-yyyy') : 'ingrese fecha de culminación'}.</li>)}
+                        {cursos.map(curso => <li key={curso.id}><b>{curso.academia ? curso.academia : 'ingrese instituto'}.</b> - {curso.curso ? curso.curso : 'ingrese curso'}. {curso.cursoDesde ? format(new Date(curso.cursoDesde), 'LLL-yyyy') : 'ingrese fecha de inicio'} -- {curso.cursoHasta ? format(new Date(curso.cursoHasta), 'LLL-yyyy') : 'ingrese fecha de culminación'}. <button className='boton-borrar' onClick={()=>{borrarCurso(curso.id)}}>x</button></li>)}
                     </ul>
                     
                     <h4><b>Experiencia Laboral</b></h4>
                     <ul> 
-                        {trabajos.map(trabajo => <li key={trabajo.id}><b>{trabajo.empresa ? trabajo.empresa : 'ingrese empresa'}.</b> - {trabajo.cargo ? trabajo.cargo : 'ingrese cargo'}. {trabajo.trabajoDesde ? format(new Date(trabajo.trabajoDesde), 'LLLL-yyyy') : 'ingrese fecha de inicio'} - {trabajo.trabajoHasta ? format(new Date(trabajo.trabajoHasta), 'LLLL-yyyy') : 'ingrese fecha de culminación'}.</li>)}
+                        {trabajos.map(trabajo => <li key={trabajo.id}><b>{trabajo.empresa}.</b> - {trabajo.cargo}. {format(new Date(trabajo.trabajoDesde), 'LLL-yyyy')} -- {format(new Date(trabajo.trabajoHasta), 'LLL-yyyy')}. <button className='boton-borrar' onClick={()=>{borrarTrabajo(trabajo.id)}}>x</button></li>)}
                     </ul>
 
 

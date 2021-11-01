@@ -5,18 +5,17 @@ import { DatosPersonales } from './components/DatosPersonales';
 import { Estudios } from './components/Estudios';
 import { RenderFinal } from './components/RenderFinal';
 import { Trabajo } from './components/Trabajo';
-import {propiedades} from './propiedades';
 import './styles/cv.css'
 
 const idRandom = () => (Math.random() * 100).toString();
 
 export const CvPRoject = () => {
-
-    const [trabajos, setTrabajos] = useState([]);
-    const [estudios, setEstudios] = useState([]);
-    const [cursos, setCursos] = useState([]);
     
-    const [principal, setPrincipal] = useState({propiedades});
+    const [trabajos, setTrabajos] = useState([{empresa:'Google', cargo:'Ingeniero de Software', trabajoDesde:'Ene 2020', trabajoHasta:'Ene 2030'}]);
+    const [estudios, setEstudios] = useState([{instituto:'Udemy.com', carrera:'Software Engineer', desde:'Ene 2018', hasta:'Dic 2018'}]);
+    const [cursos, setCursos] = useState([{academia:'Free Code Camp', curso:'JavaScript Algorithms and Data Structures', cursoDesde:'Ene 2019', cursoHasta:'Feb 2019'}]);
+    const [principal, setPrincipal] = useState([]);
+
 
     const handleInputChange = (e ) => {
        setPrincipal({...principal, [e.target.name]: e.target.value})
@@ -25,23 +24,20 @@ export const CvPRoject = () => {
        setPrincipal({...principal, [inputName]:''})
     }
 
+    const borrarEstudio = id => {
+        const newEstudio = estudios.filter(estudio => estudio.id !== id);
+        setEstudios(newEstudio);
+    }
 
+    const borrarCurso = id => {
+        const newCurso = cursos.filter(curso => curso.id !== id);
+        setCursos(newCurso);
+    }
 
-
-    //   const crearEstudio = () => {
-    //     setData([...data, { ...inputs, id: idRandom() }]);
-    //   };
-
-    //   const borrarEstudio = id => {
-    //     const newData = data.filter(estudio => estudio.id !== id);
-    //     setData(newData);
-    //   };
-
-    //   const resetearInputs = () => {
-    //     setInputs(inputPorDefecto);
-    //   };
-
-
+    const borrarTrabajo = id => {
+        const newTrabajo = trabajos.filter(trabajo => trabajo.id !== id);
+        setTrabajos(newTrabajo);
+    }
 
     return (
         <div className='contenedor-padre'>
@@ -70,7 +66,7 @@ export const CvPRoject = () => {
                 idRandom = {idRandom}
                 />
 
-                <Cursos 
+                <Cursos
                 cursos={cursos} 
                 setCursos={setCursos} 
                 idRandom={idRandom}
@@ -96,6 +92,10 @@ export const CvPRoject = () => {
             trabajos={trabajos}
             estudios={estudios}
             cursos={cursos}
+            borrarEstudio = {borrarEstudio}
+            borrarCurso = {borrarCurso}
+            borrarTrabajo= {borrarTrabajo}
+            
             />
         </div>
     )
