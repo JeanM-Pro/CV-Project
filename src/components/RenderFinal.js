@@ -44,7 +44,7 @@ export const RenderFinal = ({nombre, titulo, telefono, email, linkedin, instagra
                     <h4><b>Cursos Realizados</b></h4>
 
                     <ul>
-                        {cursos.map(curso => <li key={curso.id}><b>{curso.academia ? curso.academia : 'ingrese instituto'}.</b> - {curso.curso ? curso.curso : 'ingrese curso'}. {curso.cursoDesde ? format(new Date(curso.cursoDesde), 'LLL-yyyy') : 'ingrese fecha de inicio'} -- {curso.cursoHasta ? format(new Date(curso.cursoHasta), 'LLL-yyyy') : 'ingrese fecha de culminación'}. <button className='boton-borrar' onClick={()=>{borrarCurso(curso.id)}}>x</button></li>)}
+                        {cursos.map(curso => <li key={curso.id}><b>{curso.academia}.</b> - {curso.curso}. {format(new Date(curso.cursoDesde), 'LLL-yyyy')} -- {format(new Date(curso.cursoHasta), 'LLL-yyyy')}. <button className='boton-borrar' onClick={()=>{borrarCurso(curso.id)}}>x</button></li>)}
                     </ul>
                     
                     <h4><b>Experiencia Laboral</b></h4>
